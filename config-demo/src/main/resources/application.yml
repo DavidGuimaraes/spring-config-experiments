@@ -11,3 +11,5 @@ db:
   connection: "{connectionString: 'http://__', userName: 'foo', password: '123'}"
   host: 127.0.0.1
   port: 1200
+
+management.endpoints.web.exposure.include: "*"     #Just for testing. Do not do this in a production system!!!
