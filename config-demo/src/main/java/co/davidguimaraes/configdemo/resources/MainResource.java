@@ -12,8 +12,11 @@ public class MainResource {
     @Value("${app.name}")
     private String appName;
 
+    @Value("${test}")
+    private String test;
+
     @GetMapping("/hello")
     public String getGreeting(){
-        return "Welcome to " + this.appName;
+        return "Welcome to " + this.appName + "!\n" + this.test;
     }
 }
