@@ -1,5 +1,7 @@
 package co.davidguimaraes.configdemo.resources;
 
+import co.davidguimaraes.configdemo.config.DbSettings;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +29,9 @@ public class MainResource {
     @Value("#{${dbvalues}}")
     private Map<String, String> dbvalues;
 
+    @Autowired
+    private DbSettings dbSettings;
+
     @GetMapping("/hello")
     public String getGreeting(){
         StringBuilder strings = new StringBuilder();
@@ -36,6 +41,9 @@ public class MainResource {
         strings.append("<p>" + this.staticMessage);
         strings.append("<p>" + this.messages);
         strings.append("<p>" + this.dbvalues);
+        strings.append("<p>" + this.dbSettings.getConnection());
+        strings.append("<p>" + this.dbSettings.getHost());
+        strings.append("<p>" + this.dbSettings.getPort());
 
         return strings.toString();
     }
