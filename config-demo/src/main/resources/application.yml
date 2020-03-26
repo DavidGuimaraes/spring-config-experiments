@@ -13,3 +13,5 @@ db:
   port: 1200
 
 management.endpoints.web.exposure.include: "*"     #Just for testing. Do not do this in a production system!!!
+
+# spring.profiles.active: dev                     # java -jar config-demo-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
