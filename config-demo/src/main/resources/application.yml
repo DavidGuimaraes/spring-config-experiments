@@ -1,4 +1,8 @@
-app:
-    name: My Application 2
+# app:
+#    name: My Application 2
 
 test: Just testing something here real quickly
+
+my.list.values: One, Two, Three
+
+dbvalues: "{connectionString: 'http://__', userName: 'foo', password: '123'}"
